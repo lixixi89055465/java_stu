@@ -4,11 +4,10 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Ticket { //资源类 = 实例变量+实例方法
-    private int number = 30;
+    private int number = 50;
     Lock lock = new ReentrantLock();
 
     public void sale() {
-        lock.lock();
         lock.lock();
         try {
             if (number > 0) {
@@ -27,14 +26,46 @@ class Ticket { //资源类 = 实例变量+实例方法
  * 固定的编程套路+模板
  * 1. 在高内聚低耦合的前提下，线程， 操作，资源类
  * 1.1  ，一言不合，先创建资源类,
+ * <p>
+ * java线程的6种状态
+ * NEW ,RUNNABLE.BLOCKED,WAITTIN,TIMED_WAITTING,TERMINATED;
  */
 public class SaleTicketDemo01 {
     public static void main(String[] args) { //主线程，一切程序的入口
-        Ticket ticket=new Ticket();
+        Ticket ticket = new Ticket();
+        new Thread(() -> {
+            for (int i = 0; i <= 40; i++) {
+                ticket.sale();
+            }
+        }, "A");
 
-        Thread t1 = new Thread();
-        Thread t2 = new Thread();
-        Thread t3 = new Thread();
+
+
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 0; i <= 40; i++) {
+//                    ticket.sale();
+//                }
+//            }
+//        }, "A").start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 0; i <= 40; i++) {
+//                    ticket.sale();
+//                }
+//            }
+//        }, "B").start();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for (int i = 0; i <= 40; i++) {
+//                    ticket.sale();
+//                }
+//            }
+//        }, "C").start();
+
 
     }
 }
