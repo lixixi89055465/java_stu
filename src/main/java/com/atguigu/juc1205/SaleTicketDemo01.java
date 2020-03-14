@@ -33,12 +33,19 @@ class Ticket { //资源类 = 实例变量+实例方法
 public class SaleTicketDemo01 {
     public static void main(String[] args) { //主线程，一切程序的入口
         Ticket ticket = new Ticket();
+        new Thread(() -> System.out.println("tiankong"), "A");
         new Thread(() -> {
             for (int i = 0; i <= 40; i++) {
                 ticket.sale();
             }
-        }, "A");
+        }, "A").start();
 
+
+//        new Thread(() -> {
+//            for (int i = 0; i <= 40; i++) {
+//                ticket.sale();
+//            }
+//        }, "A");
 
 
 //        new Thread(new Runnable() {
