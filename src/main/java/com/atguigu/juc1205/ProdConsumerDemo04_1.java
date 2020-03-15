@@ -1,28 +1,42 @@
 package com.atguigu.juc1205;
 
-class Aircondition {
-    private int number = 0;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-    public synchronized void increment() throws Exception {
-        //1.判断
-        while (number != 0) {
-            this.wait();
+class Aircondition1 {
+    private int number = 0;
+    private Lock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
+
+    public void increment() throws Exception {
+
+        lock.lock();
+        try {
+            //1.判断
+            while (number != 0) {
+                condition.await();//this.wait();
+            }
+            //2.干活
+            number++;
+            System.out.println(Thread.currentThread().getName() + "\t" + number);
+            //3. 通知 ； 唤醒其他等待的线程
+            condition.signalAll();//this.notifyAll();
+        } finally {
+            lock.unlock();
         }
-        //2.干活
-        number++;
-        System.out.println(Thread.currentThread().getName() + "\t" + number);
-        //3. 通知 ； 唤醒其他等待的线程
-        this.notifyAll();
+
+
     }
 
     public synchronized void decrement() throws Exception {
-        while (number == 0) {
-            this.wait();
+        if (number == 0) {
+            condition.await();//this.wait();
         }
         number--;
         System.out.println(Thread.currentThread().getName() + "\t" + number);
         //3. 通知 ； 唤醒其他等待的线程
-        this.notifyAll();
+        condition.signalAll();//this.notifyAll();
     }
 }
 
@@ -34,7 +48,7 @@ class Aircondition {
  * 2.判断/干活/通知
  * 3.防止虚假唤醒
  */
-public class ProdConsumerDemo04 {
+public class ProdConsumerDemo04_1 {
     public static void main(String[] args) {
         Aircondition aircondition = new Aircondition();
         new Thread(new Runnable() {
