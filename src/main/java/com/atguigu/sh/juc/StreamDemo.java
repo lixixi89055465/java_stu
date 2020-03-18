@@ -7,7 +7,11 @@ import lombok.experimental.Accessors;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Data
@@ -27,9 +31,65 @@ public class StreamDemo {
         User u4 = new User(14, "d", 28);
         User u5 = new User(15, "e", 26);
         List<User> users = Arrays.asList(u1, u2, u3, u4, u5);
+        users.stream().filter(t -> {
+            return t.getId() > 0;
+        }).filter(t -> {
+            return t.getAge() > 2;
+        }).map(m -> {
+            return m.getBookName().toUpperCase();
+        }).sorted((o1, o2) -> {
+                    return o1.compareTo(o2);
+                }
+        ).limit(2).forEach(System.out::println);
 
-        Function<String,Integer> function=s->{return s.length();};
+
+        List<Integer> list2 = Arrays.asList(1, 2, 3);
+        list2.stream().map(x -> {
+            return x * 2;
+        }).collect(Collectors.toList());
+        for (Integer element : list2) {
+            System.out.println(element);
+        }
+    }
+
+
+    private static void Function_Interface() {
+
+
+        //函数型接口
+        Function<String, Integer> function = s -> {
+            return s.length();
+        };
         System.out.println(function.apply("abc"));
+
+
+        //断定型接口
+//        Predicate<String> predicate = new Predicate<String>() {
+//            @Override
+//            public boolean test(String s) {
+//                return false;
+//            }
+//        };
+        Predicate<String> predicate = s -> {
+            return s.isEmpty();
+        };
+        System.out.println(predicate.test("xiass"));
+        //消费型接口
+//        Consumer<String> consumer = new Consumer<String>() {
+//            @Override
+//            public void accept(String s) {
+//
+//            }
+//        };
+        Consumer<String> consumer = s -> {
+            System.out.println(s);
+        };
+        consumer.accept("tian");
+        //供给型接口
+        Supplier<String> supplier = () -> {
+            return "java0222";
+        };
+        System.out.println(supplier.get());
     }
 
 }
