@@ -1,4 +1,4 @@
-package java.lang;
+package lang;
 
 //public class String {
 //
