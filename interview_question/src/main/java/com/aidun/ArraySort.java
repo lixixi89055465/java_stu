@@ -9,7 +9,35 @@ import java.util.stream.IntStream;
  */
 public class ArraySort {
     public static void main(String[] args) {
+        System.out.println(Math.sqrt(1000));
+        System.out.println(Math.pow(1000, 1.0/3));
+    }
 
+    private static void isNarcissisticNum() {
+        int num = 1000;
+        int a = 0, b = 0, c = 0;
+        for (int i = 100; i < num; i++) {
+            a = i / 100;
+            b = (i - 100 * a) / 10;
+            c = i % 10;
+            if (i == (Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3))) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    /**
+     * 13、完数：一个数如果恰好等于它的因子之和
+     */
+    private static void isWholeNumber() {
+        int num = 6;
+        int sum = 0;
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        System.out.println(sum == num);
     }
 
     /**
@@ -24,6 +52,7 @@ public class ArraySort {
 
     /**
      * 公约数
+     *
      * @param a
      * @param b
      * @return
