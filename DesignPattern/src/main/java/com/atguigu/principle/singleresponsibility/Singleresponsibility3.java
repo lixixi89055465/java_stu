@@ -1,4 +1,4 @@
-package com.atguigu.principle;
+package com.atguigu.principle.singleresponsibility;
 
 /**
  * @author lixiang
