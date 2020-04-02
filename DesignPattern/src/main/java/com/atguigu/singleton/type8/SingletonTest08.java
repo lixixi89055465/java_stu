@@ -12,6 +12,7 @@ public class SingletonTest08 {
 
 }
 
+//用枚举可以实现单例模式，推荐使用 
 enum Singleton {
 	INSTANCE;// 属性
 
