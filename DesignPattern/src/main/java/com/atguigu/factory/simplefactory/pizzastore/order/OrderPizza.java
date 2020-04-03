@@ -1,5 +1,8 @@
 package com.atguigu.factory.simplefactory.pizzastore.order;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import com.atguigu.factory.simplefactory.pizzastore.pizza.CheesePizza;
@@ -58,14 +61,18 @@ public class OrderPizza {
 			}
 		} while (true);
 	}
-
 	private String getType() {
-		Scanner scanner = new Scanner("please input pizza type :");
-		if (scanner.hasNext()) {
-			String next = scanner.next();
-			return next;
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("input pizza 种类 ");
+		String string;
+		try {
+			string = bufferedReader.readLine();
+			return string;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
 		}
-		return "greek";
 	}
 
 }
