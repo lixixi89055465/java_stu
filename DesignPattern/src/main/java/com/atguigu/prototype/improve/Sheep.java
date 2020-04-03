@@ -4,7 +4,8 @@ public class Sheep implements Cloneable {
 	private String name;
 	private int age;
 	private String color;
-	private String addressString="蒙古羊";
+	private String addressString = "蒙古羊";
+	private Sheep friend; // 是对象
 
 	public Sheep() {
 		super();
@@ -41,10 +42,25 @@ public class Sheep implements Cloneable {
 		this.color = color;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Sheep [name=" + name + ", age=" + age + ", color=" + color + ", addressString=" + addressString + "]";
+	}
+
+	public String getAddressString() {
+		return addressString;
+	}
+
+	public void setAddressString(String addressString) {
+		this.addressString = addressString;
+	}
+
+	public Sheep getFriend() {
+		return friend;
+	}
+
+	public void setFriend(Sheep friend) {
+		this.friend = friend;
 	}
 
 	/*
