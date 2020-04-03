@@ -6,18 +6,15 @@ import java.io.InputStreamReader;
 import com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
 
 public class OrderPizza2 {
-	SimpleFactory simpleFactory;
 	Pizza pizza = null;
 	String orderType = "";
 
-	// 构造器
-	public OrderPizza2(SimpleFactory simpleFactory) {
-		setFactory(simpleFactory);
+	public OrderPizza2() {
+		super();
 	}
 
 	public void setFactory(SimpleFactory simpleFactory) {
 		String orderType = "";// 用户输入的工厂
-		this.simpleFactory = simpleFactory; // 设置简单工厂对象
 		do {
 			orderType = getType();
 			pizza = SimpleFactory.createPizza2(orderType);

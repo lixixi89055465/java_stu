@@ -5,8 +5,10 @@ public class PIzzaStore {
 	public static void main(String[] args) {
 //		OrderPizza orderPizza = new OrderPizza();
 		// 简单工厂模式
-		new OrderPizza(new SimpleFactory());
-		System.out.println("退出了程序");
+//		new OrderPizza(new SimpleFactory());
+//		System.out.println("退出了程序");
+		//静态工厂模式
+		new OrderPizza2();
 	}
 
 }
