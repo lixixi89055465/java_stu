@@ -14,7 +14,7 @@ public class Client {
 		remoteController.setCommand(0, lightOnCommand, lightOffCommand);
 		System.out.println("--------按下灯的开按钮---------------");
 		remoteController.onButtonWasPushed(0);
-		System.out.println("--------按下灯的开按钮---------------");
+		System.out.println("--------按下灯的关按钮---------------");
 		remoteController.offButtonWasPushed(0);
 		System.out.println("---------按下撤销按钮------------");
 		remoteController.undoButtonWasPushed(0);
