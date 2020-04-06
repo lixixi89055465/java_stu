@@ -18,6 +18,12 @@ public class Client {
 		remoteController.offButtonWasPushed(0);
 		System.out.println("---------按下撤销按钮------------");
 		remoteController.undoButtonWasPushed(0);
+
+		TVReceiver tvReceiver = new TVReceiver();
+		remoteController.setCommand(1, new TVOnCommand(tvReceiver), new TVOffCommand(tvReceiver));
+		remoteController.onButtonWasPushed(1);
+		remoteController.offButtonWasPushed(1);
+		remoteController.undoButtonWasPushed(1);
 	}
 
 }
