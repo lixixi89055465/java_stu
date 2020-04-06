@@ -21,6 +21,8 @@ class User {
     private int id;
     private String bookName;
     private int age;
+    
+    
 }
 
 public class StreamDemo {
@@ -56,14 +58,14 @@ public class StreamDemo {
     private static void Function_Interface() {
 
 
-        //函数型接口
+        //鍑芥暟鍨嬫帴鍙�
         Function<String, Integer> function = s -> {
             return s.length();
         };
         System.out.println(function.apply("abc"));
 
 
-        //断定型接口
+        //鏂畾鍨嬫帴鍙�
 //        Predicate<String> predicate = new Predicate<String>() {
 //            @Override
 //            public boolean test(String s) {
@@ -74,7 +76,7 @@ public class StreamDemo {
             return s.isEmpty();
         };
         System.out.println(predicate.test("xiass"));
-        //消费型接口
+        //娑堣垂鍨嬫帴鍙�
 //        Consumer<String> consumer = new Consumer<String>() {
 //            @Override
 //            public void accept(String s) {
@@ -85,7 +87,7 @@ public class StreamDemo {
             System.out.println(s);
         };
         consumer.accept("tian");
-        //供给型接口
+        //渚涚粰鍨嬫帴鍙�
         Supplier<String> supplier = () -> {
             return "java0222";
         };
