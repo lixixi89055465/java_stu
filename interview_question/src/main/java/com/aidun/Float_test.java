@@ -4,7 +4,13 @@ import java.math.BigDecimal;
 
 public class Float_test {
     public static void main(String[] args) {
-        test2();
+        double a=0.9;
+        double b=0.9;
+        double c=a/b;
+        System.out.println(a/(float)b);
+        System.out.println(c>1.0);
+        System.out.println(c<1.0);
+        System.out.println(a==b);
     }
 
     private static void test2() {

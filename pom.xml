@@ -13,6 +13,7 @@
         <module>jvm_stu</module>
         <module>redis_demo</module>
         <module>DesignPattern</module>
+        <module>swagger_stu</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
