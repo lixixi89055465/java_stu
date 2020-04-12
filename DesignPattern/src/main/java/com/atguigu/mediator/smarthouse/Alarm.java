@@ -9,7 +9,7 @@ public class Alarm extends Colleague {
 	public Alarm(Mediator mediator, String name) {
 		super(mediator, name);
 		//在创建Alarm同时对象时，将自己放入到ConcreteMediator 对象中【集合】
-		mediator.Register(name, this);
+//		mediator.Register(name, this);
 	}
 
 	public void sendAlarm(int stateChange) {
