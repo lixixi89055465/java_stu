@@ -21,7 +21,7 @@ public class Liskov {
 //A 类
 class A {
     //返回两个数的差
-    public int func1(int num1, int num2) {
+     int func1(int num1, int num2) {
         return num1 - num2;
     }
 }
@@ -30,6 +30,7 @@ class A {
 //增加了一个新的功能：完成两个数想家，然后和9求和 ，由B来完成
 class B extends A {
     //这里 重写了A类的方法，可能是无意识的。
+    @Override
     public int func1(int a, int b) {
         return a + b;
     }
