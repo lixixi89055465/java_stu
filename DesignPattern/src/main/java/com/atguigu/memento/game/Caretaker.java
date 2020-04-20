@@ -6,7 +6,7 @@ package com.atguigu.memento.game;
 * 守护者对象，保护游戏角色的状态
 */
 public class Caretaker {
-	// 如果只保存一次壮体啊
+	// 如果只保存一次实体啊
 	private Memento memento;
 
 	// 对GAMEROLE 保存对此对象

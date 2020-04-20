@@ -6,8 +6,11 @@ package com.atguigu.memento.game;
  * @version 创建时间：Apr 12, 2020 类说明
  */
 public class GameRole {
+	// 攻击力
 	private int vit;
+	// 防御力
 	private int def;
+
 
 	// 创建memento,即根据当前的状态得到Memento
 	public Memento createMemento() {
