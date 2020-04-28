@@ -1,6 +1,7 @@
 package com.atguigu.Interview.study.thread;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author lixiang
@@ -17,6 +18,12 @@ class MyData {
     //请注意，此时number前面是加了volatile关键字修饰的，volatile不保证原子性
     public void addPlusPlus() {
         number++;
+    }
+
+    AtomicInteger atomicInteger = new AtomicInteger(1);
+
+    public void addAtomicInteger() {
+        atomicInteger.getAndIncrement();
     }
 
 }
@@ -39,6 +46,7 @@ public class VolatileDemo {
             new Thread(() -> {
                 for (int j = 1; j <= 1000; j++) {
                     myData.addPlusPlus();
+                    myData.addAtomicInteger();
                 }
             }, String.valueOf(i)).start();
         }
@@ -48,6 +56,7 @@ public class VolatileDemo {
             Thread.yield();
         }
         System.out.println(myData.number);
+        System.out.println(myData.atomicInteger);
     }
 
     private static void seeOkByVolatile() {

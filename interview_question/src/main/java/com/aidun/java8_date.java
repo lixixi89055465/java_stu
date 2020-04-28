@@ -1,6 +1,10 @@
 package com.aidun;
 
+import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
+
 import java.time.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * @author lixiang
@@ -8,7 +12,8 @@ import java.time.*;
  */
 public class java8_date {
     public static void main(String[] args) throws InterruptedException {
-        test04();
+        int year=LocalDate.now().lengthOfYear();
+        System.out.println(year);
     }
 
     /**

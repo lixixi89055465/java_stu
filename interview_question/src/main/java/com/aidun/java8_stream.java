@@ -36,26 +36,20 @@ public class java8_stream {
          * max --返回流中最大值
          * min--返回流中的最小值
          */
-        boolean b1 = employees.stream()//
-                .allMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
+        boolean b1 = employees.stream().allMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
         System.out.println(b1);
-        boolean b = employees.stream()//
-                .anyMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
+        boolean b = employees.stream().anyMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
         System.out.println(b);
         boolean b2 = employees.stream().noneMatch(e -> e.getStatus().equals(Employee.Status.BUSY));
         System.out.println(b2);
-        Optional<Employee> first = employees.stream()//
-                .sorted((e1, e2) -> Double.compare(e1.getSlave(), e2.getSlave())).findFirst();
+        Optional<Employee> first = employees.stream().sorted((e1, e2) -> Double.compare(e1.getSlave(), e2.getSlave())).findFirst();
         System.out.println(first.get());
 
-        Optional<Employee> any = employees.stream()//
-                .filter((e) -> e.getStatus().equals(Employee.Status.BUSY))//
-                .findAny();
+        Optional<Employee> any = employees.stream().filter((e) -> e.getStatus().equals(Employee.Status.BUSY)).findAny();
         System.out.println(any.get());
         Long count = employees.stream().count();
         System.out.println(count);
-        Optional<Employee> max = employees.stream()//
-                .max((e1, e2) -> Double.compare(e1.getSlave(), e2.getSlave()));
+        Optional<Employee> max = employees.stream().max((e1, e2) -> Double.compare(e1.getSlave(), e2.getSlave()));
         System.out.println(max.get());
     }
 
@@ -91,16 +85,10 @@ public class java8_stream {
      */
     private static void test5() {
         List<String> list = Arrays.asList("aa", "bb", "cc", "dd");
-        list.stream()//
-                .map((e) -> e.toUpperCase())//
-                .forEach(System.out::print);
+        list.stream().map((e) -> e.toUpperCase()).forEach(System.out::print);
         System.out.println();
-        employees.stream()//
-                .map(Employee::getAge)//
-                .forEach(System.out::print);
-        Stream<Stream<Character>> streamStream = //
-                list.stream().//
-                        map(java8_stream::filterCharacter);
+        employees.stream().map(Employee::getAge).forEach(System.out::print);
+        Stream<Stream<Character>> streamStream = list.stream().map(java8_stream::filterCharacter);
         System.out.println();
         streamStream.forEach(sm -> {
             sm.forEach(System.out::print);

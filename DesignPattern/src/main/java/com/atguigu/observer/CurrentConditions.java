@@ -15,7 +15,7 @@ public class CurrentConditions {
 	 * 更新天气情况，是由WeatherData来调用，我使用推送模式 
 	 * @param temperature
 	 * @param pressure
-	 * @param humidiy
+	 * @param humidity
 	 */
 	public void update(float temperature,float pressure,float humidity) {
 		this.temperature=temperature;

@@ -17,7 +17,7 @@ public class BaiduSite implements Observer {
 	 * 
 	 * @param temperature
 	 * @param pressure
-	 * @param humidiy
+	 * @param humidity
 	 */
 	@Override
 	public void update(float temperature, float pressure, float humidity) {
