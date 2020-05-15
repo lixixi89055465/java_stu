@@ -18,7 +18,7 @@
 		<slf4j-log4j12>1.7.16</slf4j-log4j12>
 		<log4j.version>2.5</log4j.version>
 		<druid.version>1.0.24</druid.version>
-		<jackson.version>2.7.3</jackson.version>
+		<jackson.version>2.11.0</jackson.version>
 		<jackson-databind.version>2.7.3</jackson-databind.version>
 		<jsoup.version>1.9.1</jsoup.version>
 		<json.version>20160212</json.version>
