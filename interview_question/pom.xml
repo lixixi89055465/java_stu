@@ -10,5 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>interview_question</artifactId>
 
+    <properties>
+        <spring.version>4.2.4.RELEASE</spring.version>
 
+    </properties>
+    <dependencies>
+        <!-- spring核心包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
 </project>

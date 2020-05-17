@@ -1,9 +1,6 @@
 package com.atguigu.Interview.study.thread;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -13,7 +10,32 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ContainerNotSafeDemo {
     public static void main(String[] args) {
-//        List<String> list = new ArrayList<>();
+
+//        HashMap<Object, String> map = new HashMap<>();
+        Map<Object, String> map = Collections.synchronizedMap(new HashMap<>());
+        for (int i = 0; i <= 30; i++) {
+            new Thread(() -> {
+                map.put(Thread.currentThread().getName(), UUID.randomUUID().toString().substring(0, 8));
+                System.out.println(map);
+            }, String.valueOf(i)).start();
+
+        }
+    }
+
+    private static void test2() {
+        //        Set<String> set = new HashSet<>();
+        Set<String> set = Collections.synchronizedSet(new HashSet<>());
+        for (int i = 0; i <= 30; i++) {
+            new Thread(() -> {
+                set.add(UUID.randomUUID().toString().substring(0, 8));
+                System.out.println(set);
+            }, String.valueOf(i)).start();
+            new HashSet<>().add("a");
+        }
+    }
+
+    private static void testList() {
+        //        List<String> list = new ArrayList<>();
 //        List<String> list = new Vector<>();
 //        List<String> list = Collections.synchronizedList(new ArrayList<>());
         List<String> list = new CopyOnWriteArrayList<>();
