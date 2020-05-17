@@ -1,6 +1,7 @@
 package com.atguigu.Interview.study.thread;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -12,7 +13,8 @@ public class ContainerNotSafeDemo {
     public static void main(String[] args) {
 
 //        HashMap<Object, String> map = new HashMap<>();
-        Map<Object, String> map = Collections.synchronizedMap(new HashMap<>());
+//        Map<Object, String> map = Collections.synchronizedMap(new HashMap<>());
+        Map<Object, String> map = new ConcurrentHashMap<>();
         for (int i = 0; i <= 30; i++) {
             new Thread(() -> {
                 map.put(Thread.currentThread().getName(), UUID.randomUUID().toString().substring(0, 8));
