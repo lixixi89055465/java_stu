@@ -1,4 +1,4 @@
-package com.atguigu.Interview.test;
+package com.atguigu.interview.test;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

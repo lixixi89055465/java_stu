@@ -1,4 +1,4 @@
-package com.atguigu.Interview.entities;
+package com.atguigu.interview.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

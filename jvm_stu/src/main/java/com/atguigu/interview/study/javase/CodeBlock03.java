@@ -1,4 +1,4 @@
-package com.atguigu.Interview.study.javase;
+package com.atguigu.interview.study.javase;
 
 /**
  * 静态方法 > 代码块 > 构造方法

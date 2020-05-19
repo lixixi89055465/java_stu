@@ -1,6 +1,6 @@
-package com.atguigu.Interview.study.javase;
+package com.atguigu.interview.study.javase;
 
-import com.atguigu.Interview.entities.Person;
+import com.atguigu.interview.entities.Person;
 
 /**
  * @author lixiang

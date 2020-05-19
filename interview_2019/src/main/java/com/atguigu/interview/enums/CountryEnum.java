@@ -1,4 +1,4 @@
-package com.atguigu.Interview.enums;
+package com.atguigu.interview.enums;
 
 /**
  * @author lixiang

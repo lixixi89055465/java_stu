@@ -1,4 +1,4 @@
-package com.atguigu.Interview.study.thread;
+package com.atguigu.interview.study.thread;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;

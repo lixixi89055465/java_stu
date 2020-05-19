@@ -1,6 +1,6 @@
-package com.atguigu.Interview.study.thread;
+package com.atguigu.interview.study.thread;
 
-import com.atguigu.Interview.enums.CountryEnum;
+import com.atguigu.interview.enums.CountryEnum;
 
 import java.util.concurrent.CountDownLatch;
 
