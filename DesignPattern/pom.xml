@@ -20,7 +20,7 @@
 		<druid.version>1.0.24</druid.version>
 		<jackson.version>2.7.3</jackson.version>
 		<jackson-databind.version>2.7.3</jackson-databind.version>
-		<jsoup.version>1.9.1</jsoup.version>
+		<jsoup.version>1.14.2</jsoup.version>
 		<json.version>20160212</json.version>
 		<gson.version>2.6.2</gson.version>
 		<mybatis.version>3.3.0</mybatis.version>
