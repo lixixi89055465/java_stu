@@ -16,7 +16,7 @@
 		<spring.version>4.2.4.RELEASE</spring.version>
 		<jdk.version>1.8</jdk.version>
 		<slf4j-log4j12>1.7.16</slf4j-log4j12>
-		<log4j.version>2.5</log4j.version>
+		<log4j.version>2.15.0</log4j.version>
 		<druid.version>1.0.24</druid.version>
 		<jackson.version>2.7.3</jackson.version>
 		<jackson-databind.version>2.7.3</jackson-databind.version>
