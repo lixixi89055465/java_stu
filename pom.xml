@@ -15,6 +15,9 @@
         <module>DesignPattern</module>
         <module>swagger_stu</module>
         <module>interview_2019</module>
+        <module>base</module>
+        <module>module-a</module>
+        <module>module-b</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
