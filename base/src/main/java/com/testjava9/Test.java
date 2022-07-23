@@ -1,4 +1,4 @@
-package com.test9;
+package com.testjava9;
 
 public abstract class Test<T>{
     public T t;

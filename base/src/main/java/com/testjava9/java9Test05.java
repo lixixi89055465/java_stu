@@ -1,9 +1,6 @@
-package com.test9;
+package com.testjava9;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Optional;
 
 public class java9Test05 {

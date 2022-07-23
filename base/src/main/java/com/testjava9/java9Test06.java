@@ -1,7 +1,6 @@
-package com.test9;
+package com.testjava9;
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class java9Test06 {
     public static void main(String[] args) throws IOException {

@@ -1,4 +1,4 @@
-package com.test9;
+package com.testjava9;
 
 import java.io.IOException;
 import java.io.InputStream;
