@@ -68,7 +68,7 @@ public class StreamDemo {
         //鏂畾鍨嬫帴鍙�
 //        Predicate<String> predicate = new Predicate<String>() {
 //            @Override
-//            public boolean test8(String s) {
+//            public boolean testjava8(String s) {
 //                return false;
 //            }
 //        };
