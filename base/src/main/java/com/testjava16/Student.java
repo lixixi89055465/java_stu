@@ -6,14 +6,25 @@ public class Student {
         this.name=name;
     }
 
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (obj==this)return true;
+//        if (obj instanceof Student){
+//            Student student=(Student) obj;
+//            return student.name.equals(this.name);
+//        }
+//        return false;
+//    }
+
+
     @Override
     public boolean equals(Object obj) {
         if (obj==this)return true;
-        if (obj instanceof Student){
-            Student student=(Student) obj;
-            return student.name.equals(this.name);
+        if (obj instanceof Student student){
+            return student.equals(this.name );
         }
-        return false;
+
+        return super.equals(obj);
     }
 
     public static void main(String[] args) {
