@@ -26,6 +26,8 @@ class MyData {
         atomicInteger.getAndIncrement();
     }
 
+    public void update(int i) {
+    }
 }
 
 /**

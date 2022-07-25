@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class DirectBufferMemoryDemo {
     public static void main(String[] args) {
-        System.out.println("配置的maxDirectMemory:" + (sun.misc.VM.maxDirectMemory() / (double) 1024 / 1024) + "MB");
+//        System.out.println("配置的maxDirectMemory:" + (sun.misc.VM.maxDirectMemory() / (double) 1024 / 1024) + "MB");
 
         try {
             TimeUnit.SECONDS.sleep(3);
