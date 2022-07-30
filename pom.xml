@@ -16,8 +16,8 @@
 <!--        <module>swagger_stu</module>-->
         <module>interview_2019</module>
         <module>base</module>
-        <module>module-a</module>
-        <module>module-b</module>
+<!--        <module>module-a</module>-->
+<!--        <module>module-b</module>-->
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -31,7 +31,6 @@
             <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>
