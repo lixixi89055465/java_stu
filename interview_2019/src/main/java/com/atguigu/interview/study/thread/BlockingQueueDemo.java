@@ -16,6 +16,11 @@ import java.util.concurrent.TimeUnit;
  */
 public class BlockingQueueDemo {
     public static void main(String[] args) throws InterruptedException {
+        testSynchronousQueue();
+//        test4();
+    }
+
+    private static void testSynchronousQueue() {
         //同步队列
         BlockingQueue<String> blockingQueue = new SynchronousQueue<>();
         new Thread(() -> {
@@ -59,6 +64,8 @@ public class BlockingQueueDemo {
         System.out.println(blockingQueue.offer("a", 2L, TimeUnit.SECONDS));
         System.out.println(blockingQueue.offer("b", 2L, TimeUnit.SECONDS));
         System.out.println(blockingQueue.offer("c", 2L, TimeUnit.SECONDS));
+//        System.out.println(blockingQueue.offer("d", 2L, TimeUnit.SECONDS));
+        System.out.println(blockingQueue.poll());
         System.out.println(blockingQueue.poll());
         System.out.println(blockingQueue.poll());
         System.out.println(blockingQueue.poll());
