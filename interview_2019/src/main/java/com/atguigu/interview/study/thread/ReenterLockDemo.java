@@ -27,20 +27,20 @@ class Phone {
 public class ReenterLockDemo {
     public static void main(String[] args) {
         Phone phone = new Phone();
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 phone.sendSMS();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        },"t1").start();
-        new Thread(()->{
+        }, "t1").start();
+        new Thread(() -> {
             try {
                 phone.sendSMS();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        },"t2").start();
+        }, "t2").start();
     }
 }
 

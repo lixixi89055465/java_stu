@@ -31,15 +31,32 @@ public class ABADemo {
         new Thread(() -> {
             int stamp = atomicStampedReference.getStamp();
 
-            System.out.println(Thread.currentThread().getName() + "\t 第一次获取版本号" + stamp);
+            System.out.println(Thread.currentThread().getName() + "\t 第1次获取版本号" + stamp);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                atomicStampedReference.compareAndSet(100, 101,
+                        atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1);
+                System.out.println(Thread.currentThread().getName() + "\t 第2次获取版本号" + stamp);
+                atomicStampedReference.compareAndSet(101, 100,
+                        atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1);
+                System.out.println(Thread.currentThread().getName() + "\t 第3次获取版本号" + stamp);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }, "t3").start();
         new Thread(() -> {
+            int stamp = atomicStampedReference.getStamp();
+            System.out.println(Thread.currentThread().getName() + "\t 第1次获取版本号" + stamp);
             try {
                 TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-//            atomicStampedReference.compareAndSet(100,2019,atomicStampedReference)
+            boolean result = atomicStampedReference.compareAndSet(100, 2019, stamp, stamp + 1);
+            System.out.println(Thread.currentThread().getName() + "\t 修改成功是否:" + result);
+            System.out.println(Thread.currentThread().getName() + "\t 当前实际最新值 :" + atomicStampedReference.getReference());
+
         }, "t4").start();
     }
 }
