@@ -85,26 +85,26 @@ public class ProdConsumer_TraditionDemo {
         }, "BB").start();
 
 
-        new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
-                try {
-                    shareData.increment();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }, "CC").start();
+//        new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                try {
+//                    shareData.increment();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }, "CC").start();
 
 
-        new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
-                try {
-                    shareData.decrement();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }, "DD").start();
+//        new Thread(() -> {
+//            for (int i = 0; i < 5; i++) {
+//                try {
+//                    shareData.decrement();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }, "DD").start();
 
     }
 }

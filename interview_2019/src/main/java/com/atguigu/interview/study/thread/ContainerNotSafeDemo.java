@@ -14,6 +14,11 @@ public class ContainerNotSafeDemo {
 
 //        HashMap<Object, String> map = new HashMap<>();
 //        Map<Object, String> map = Collections.synchronizedMap(new HashMap<>());
+        testMap();
+//        testList();
+    }
+
+    private static void testMap() {
         Map<Object, String> map = new ConcurrentHashMap<>();
         for (int i = 0; i <= 30; i++) {
             new Thread(() -> {
@@ -37,17 +42,20 @@ public class ContainerNotSafeDemo {
     }
 
     private static void testList() {
-        //        List<String> list = new ArrayList<>();
+                List<String> list = new ArrayList<>();
 //        List<String> list = new Vector<>();
 //        List<String> list = Collections.synchronizedList(new ArrayList<>());
-        List<String> list = new CopyOnWriteArrayList<>();
+//        List<String> list = new CopyOnWriteArrayList<>();
         list.forEach(System.out::println);
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 3; i++) {
             new Thread(() -> {
                 list.add(UUID.randomUUID().toString().substring(0, 8));
                 System.out.println(list);
             }, String.valueOf(i)).start();
-
         }
+//        try { Thread.currentThread().sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); }
+
+
     }
 }
+

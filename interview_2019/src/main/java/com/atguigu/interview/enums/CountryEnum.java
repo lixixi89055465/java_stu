@@ -1,5 +1,8 @@
 package com.atguigu.interview.enums;
 
+import lombok.Data;
+import lombok.Getter;
+
 /**
  * @author lixiang
  * @date 2020-05-19-00:02
@@ -20,7 +23,9 @@ public enum CountryEnum {
 
     SEVEN(7, "秦");
 
+    @Getter
     private Integer retCode;
+    @Getter
     private String retMessage;
 
     CountryEnum(Integer retCode, String retMessage) {
@@ -28,21 +33,21 @@ public enum CountryEnum {
         this.retMessage = retMessage;
     }
 
-    public Integer getRetCode() {
-        return retCode;
-    }
-
-    public void setRetCode(Integer retCode) {
-        this.retCode = retCode;
-    }
-
-    public String getRetMessage() {
-        return retMessage;
-    }
-
-    public void setRetMessage(String retMessage) {
-        this.retMessage = retMessage;
-    }
+//    public Integer getRetCode() {
+//        return retCode;
+//    }
+//
+//    public void setRetCode(Integer retCode) {
+//        this.retCode = retCode;
+//    }
+//
+//    public String getRetMessage() {
+//        return retMessage;
+//    }
+//
+//    public void setRetMessage(String retMessage) {
+//        this.retMessage = retMessage;
+//    }
 
     public static CountryEnum forEach_CountryEnum(int index) {
         CountryEnum[] myArray = CountryEnum.values();

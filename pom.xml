@@ -9,15 +9,15 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>interview_question</module>
-        <module>jvm_stu</module>
-        <module>redis_demo</module>
-        <module>DesignPattern</module>
+<!--        <module>interview_question</module>-->
+<!--        <module>jvm_stu</module>-->
+<!--        <module>redis_demo</module>-->
+<!--        <module>DesignPattern</module>-->
 <!--        <module>swagger_stu</module>-->
         <module>interview_2019</module>
-        <module>base</module>
-        <module>module-a</module>
-        <module>module-b</module>
+<!--        <module>base</module>-->
+<!--        <module>module-a</module>-->
+<!--        <module>module-b</module>-->
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -31,7 +31,6 @@
             <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>

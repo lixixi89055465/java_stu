@@ -10,6 +10,11 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchDemo {
     public static void main(String[] args) throws InterruptedException {
+        dieState();
+//        closeDoor();
+    }
+
+    private static void dieState() throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(6);
         for (int i = 1; i <= 6; i++) {
             new Thread(() -> {
@@ -23,7 +28,6 @@ public class CountDownLatchDemo {
         System.out.println(CountryEnum.ONE);
         System.out.println(CountryEnum.ONE.getRetCode());
         System.out.println(CountryEnum.ONE.getRetMessage());
-
     }
 
     private static void closeDoor() throws InterruptedException {

@@ -5,15 +5,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Phone1 implements Runnable {
-    public synchronized void sendSMS() throws Exception {
-        System.out.println(Thread.currentThread().getId() + "\t invoked sendSMS ");
-        sendEmail();
-    }
-
-    public synchronized void sendEmail() throws Exception {
-        System.out.println(Thread.currentThread().getId() + "\t ========invoked sendEmail ");
-    }
-
     Lock lock = new ReentrantLock();
 
     @Override
@@ -26,7 +17,7 @@ class Phone1 implements Runnable {
     }
 
     public void get() {
-//        lock.lock();
+        lock.lock();
         lock.lock();
         try {
             //线程可以进入任何一个它已经拥有的锁所同步着的代码块
@@ -44,11 +35,9 @@ class Phone1 implements Runnable {
         lock.lock();
         try {
             System.out.println(Thread.currentThread().getName() + "\t ========invoked set ");
-
         } finally {
             lock.unlock();
         }
-
     }
 
 }
