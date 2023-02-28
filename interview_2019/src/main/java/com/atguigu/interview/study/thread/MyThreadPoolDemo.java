@@ -9,6 +9,10 @@ import java.util.concurrent.*;
  */
 public class MyThreadPoolDemo {
     public static void main(String[] args) {
+        test01();
+    }
+
+    private static void test02() {
         ThreadPoolExecutor threadPool = new ThreadPoolExecutor(
                 2,
                 5,
@@ -34,8 +38,8 @@ public class MyThreadPoolDemo {
         }
     }
 
-    private static void test1() {
-        //        ExecutorService threadPool = Executors.newFixedThreadPool(5);
+    private static void test01() {
+//                ExecutorService threadPool = Executors.newFixedThreadPool(5);
 //        ExecutorService threadPool = Executors.newFixedThreadPool(1);
 //        ExecutorService threadPool = Executors.newCachedThreadPool();
         ExecutorService threadPool = Executors.newSingleThreadExecutor();
