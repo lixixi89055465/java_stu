@@ -2,7 +2,8 @@ package com.atguigu.jvm1205;
 
 public class T2 {
     public static void main(String[] args) {
-        System.gc();
+//        System.gc();
+        Jvm_parameter();
     }
 
     private static void Jvm_parameter() {
