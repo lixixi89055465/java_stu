@@ -10,8 +10,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * java.util.ConcurentModificationException （并发修改异常)
  * 2.导致原因
  * 要线程安全就用vector,线程不安全就用arraylist
- * //        List<String> list = new ArrayList<>();
- * //        List<String> list = Collections.synchronizedList(new ArrayList<>());//new Vector()
+ * //        List<aString> list = new ArrayList<>();
+ * //        List<aString> list = Collections.synchronizedList(new ArrayList<>());//new Vector()
  * 3.解决方法
  * 4.优化建议（同样的错误不要犯第 2 次）
  */
@@ -43,8 +43,8 @@ public class NotSafeDemo03 {
     }
 
     private static void listNotSafe() {
-        //        List<String> list = new ArrayList<>();
-//        List<String> list = Collections.synchronizedList(new ArrayList<>());//new Vector()
+        //        List<aString> list = new ArrayList<>();
+//        List<aString> list = Collections.synchronizedList(new ArrayList<>());//new Vector()
         List<String> list = new CopyOnWriteArrayList<>();
         for (int i = 0; i <= 3; i++) {
             new Thread(() -> {

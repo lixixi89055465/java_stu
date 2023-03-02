@@ -27,6 +27,6 @@ public class TestTransferValue {
 
         String str = "abc";
         test.changeValue3(str);
-        System.out.println("String ------" + str);
+        System.out.println("aString ------" + str);
     }
 }

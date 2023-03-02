@@ -66,9 +66,9 @@ public class StreamDemo {
 
 
         //鏂畾鍨嬫帴鍙�
-//        Predicate<String> predicate = new Predicate<String>() {
+//        Predicate<aString> predicate = new Predicate<aString>() {
 //            @Override
-//            public boolean testjava8(String s) {
+//            public boolean testjava8(aString s) {
 //                return false;
 //            }
 //        };
@@ -77,9 +77,9 @@ public class StreamDemo {
         };
         System.out.println(predicate.test("xiass"));
         //娑堣垂鍨嬫帴鍙�
-//        Consumer<String> consumer = new Consumer<String>() {
+//        Consumer<aString> consumer = new Consumer<aString>() {
 //            @Override
-//            public void accept(String s) {
+//            public void accept(aString s) {
 //
 //            }
 //        };
