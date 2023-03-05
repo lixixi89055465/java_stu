@@ -5,8 +5,12 @@ package com.atguigu.interview.study.jvm.ref;
  * @date 2020-05-21-08:39
  * -Xms10m -Xmx10m -XX:+PrintGCDetails -XX:+PrintCommandLineFlags -XX:UseG1GC
  * -Xms128m -Xmx1024m -Xss1024k -XX:MetaspaceSize=512m -XX:+PrintCommandLineFlags -XX:+PrintGCDetails -XX:+UseSerialGC
-
-
+ * +PrintGCDetails -XX:+UseSerialGC -Xms:10m -Xmx:10m -XX:SurvivorRatio=8
+ * +PrintGCDetails -XX:+UseSerialGC -Xms:10m -Xmx:10m -XX:SurvivorRatio=4
+ * +PrintGCDetails -XX:+UseSerialGC -Xms:10m -Xmx:10m -XX:NewRatio=2
+ * jinfo -flag MaxTenuringThreshold  线程
+ *
+ * -XX:MaxTenuringThreshold=20
  */
 public class HelloGC {
     public static void main(String[] args) throws InterruptedException {
