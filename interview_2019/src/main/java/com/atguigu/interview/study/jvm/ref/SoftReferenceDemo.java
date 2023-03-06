@@ -22,13 +22,15 @@ public class SoftReferenceDemo {
     }
 
     public static void softRef_Memeory_NotEnough() {
+        //-Xms10m -Xmx10m -XX:PrintGCDetails
         Object o1 = new Object();
         SoftReference<Object> softReference = new SoftReference<>(o1);
         System.out.println(o1);
         System.out.println(softReference.get());
         o1 = null;
+//        System.gc();
         try {
-            byte[] bytes = new byte[1024 * 1024 * 10];
+            byte[] bytes = new byte[1024 * 1024 * 8];
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {

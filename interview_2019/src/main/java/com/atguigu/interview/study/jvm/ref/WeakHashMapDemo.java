@@ -8,6 +8,12 @@ import java.util.WeakHashMap;
  * @date 2020-05-21-11:32
  */
 public class WeakHashMapDemo {
+    public static void main(String[] args) {
+        myHashMap();
+        System.out.println("111111111111111111111111111111111111111");
+        myWeakHashMap();
+    }
+
     private static void myHashMap() {
         HashMap<Integer, String> map = new HashMap<>();
 
@@ -17,16 +23,13 @@ public class WeakHashMapDemo {
         System.out.println(map);
 
         key = null;
-        System.out.println(map);
+        System.out.println(map + "\t" + map.size());
     }
 
-    public static void main(String[] args) {
-        myWeakHashMap();
-    }
 
     private static void myWeakHashMap() {
         WeakHashMap<Integer, String> map = new WeakHashMap<>();
-        Integer key = new Integer(1);
+        Integer key = new Integer(2);
         String value = "HashMap";
         map.put(key, value);
         System.out.println(map);

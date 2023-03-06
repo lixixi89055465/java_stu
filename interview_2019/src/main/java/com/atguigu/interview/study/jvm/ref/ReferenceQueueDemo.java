@@ -19,5 +19,8 @@ public class ReferenceQueueDemo {
         o1 = null;
         System.gc();
         Thread.sleep(500);
+        System.out.println(o1);
+        System.out.println(weakReference.get());
+        System.out.println(referenceQueue.poll());
     }
 }
