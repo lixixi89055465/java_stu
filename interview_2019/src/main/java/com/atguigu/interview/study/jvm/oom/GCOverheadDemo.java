@@ -13,6 +13,7 @@ import java.util.List;
  * 连续多次GC都只回收了不到2%的极端情况下才会抛出，假如不跑出GC overhead Limit 错误会发生什么情况呢。
  * 那就是GC清理的这么点内存很快会再次填满，迫使GG再次执行，这样就形成了恶性魂环。
  * CPU的使用率一直是100%,而 GC却没有任何效果
+ * java.lang.OutOfMemoryError: GC overhead limit exceeded
  */
 public class GCOverheadDemo {
     public static void main(String[] args) {

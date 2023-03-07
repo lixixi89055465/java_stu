@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * @author lixiang
  * @date 2020-05-21-17:51
+ * Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
  */
 public class JavaHeapSpaceDemo {
     public static void main(String[] args) {
