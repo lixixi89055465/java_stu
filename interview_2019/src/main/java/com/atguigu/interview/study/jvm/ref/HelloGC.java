@@ -11,6 +11,8 @@ package com.atguigu.interview.study.jvm.ref;
  * jinfo -flag MaxTenuringThreshold  线程
  *
  * -XX:MaxTenuringThreshold=20
+ * #查看java 默认的垃圾回收器
+ * java -XX:+PrintCommandLineFlags -version
  */
 public class HelloGC {
     public static void main(String[] args) throws InterruptedException {
